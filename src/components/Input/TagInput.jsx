@@ -33,11 +33,11 @@ const TagInput = ({ tags, setTags }) => {
   return (
     <div>
       {tags?.length > 0 && (
-        <div className="flex items-center gap-2 flex-wrap mt-2">
+        <div className="flex flex-wrap items-center gap-2 border rounded p-2 max-w-full">
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="flex items-center gap-2 text-sm text-slate-900 bg-slate-100 px-3 py-1 rounded"
+              className="flex items-center gap-1 text-sm text-slate-900 bg-slate-100 px-3 py-1 rounded"
             >
               # {tag}
               <button onClick={() => handleRemoveTag(tag)}>
@@ -53,7 +53,7 @@ const TagInput = ({ tags, setTags }) => {
         <input
           type="text"
           value={inputValue}
-          className="text-sm bg-transparent border px-3 py-2 rounded outline-none"
+          className="flex-grow min-w-[100px] text-sm bg-transparent border-none outline-none px-3 py-1"
           placeholder="Add tags"
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
