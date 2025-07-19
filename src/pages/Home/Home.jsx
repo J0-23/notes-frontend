@@ -151,9 +151,9 @@ const Home = () => {
         handleClearSearch={handleClearSearch}
       />
 
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         {allNotes.length > 0 ? (
-          <div className="grid grid-cols-3 gap-4 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
             {allNotes.map((item, index) => (
               <NoteCard
                 key={item._id}
@@ -182,7 +182,7 @@ const Home = () => {
 
       {/* Floating Add button (bottom right corner) */}
       <button
-        className="w-16 h-16 flex items-center justify-center rounded-2xl bg-blue-500 hover:bg-blue-600 absolute right-10 bottom-10"
+        className="w-16 h-16 flex items-center justify-center rounded-2xl bg-blue-500 hover:bg-blue-600 fixed right-10 bottom-10"
         onClick={() => {
           setOpenAddEditModal({ isShow: true, type: "add", data: null });
         }}
